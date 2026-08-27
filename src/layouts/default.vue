@@ -756,7 +756,6 @@
   }
 
   .navbar-brand__copy,
-  .navbar-login-btn,
   .navbar-link--home {
     display: none;
   }
@@ -780,6 +779,15 @@
   .navbar-link {
     min-width: 68px;
     padding-inline: 7px;
+  }
+
+  .navbar-login-btn {
+    min-width: 44px;
+    padding-inline: 10px;
+  }
+
+  .navbar-login-btn :deep(.v-btn__content) {
+    display: none;
   }
 
   .navbar-cart-btn {
