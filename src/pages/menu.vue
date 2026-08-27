@@ -310,10 +310,10 @@
 </template>
 
 <script setup lang="ts">
-  import axios from 'axios'
   import { computed, onMounted, ref } from 'vue'
 
   import FloatingCart from '@/components/FloatingCart.vue'
+  import api from '@/plugins/axios'
   import { useCartStore } from '@/stores/cart'
 
   interface Category {
@@ -440,9 +440,7 @@
       loading.value = true
       productError.value = ''
 
-      const { data } = await axios.get(
-        'http://localhost:4000/api/products',
-      )
+      const { data } = await api.get('/api/products')
 
       products.value = data.result
     } catch (error) {
@@ -472,9 +470,7 @@
 
   async function getCategories () {
     try {
-      const { data } = await axios.get(
-        'http://localhost:4000/api/categories',
-      )
+      const { data } = await api.get('/api/categories')
 
       categories.value = data.result
     } catch (error) {
@@ -484,9 +480,7 @@
 
   async function getOrderStatuses () {
     try {
-      const { data } = await axios.get(
-        'http://localhost:4000/api/orders/status',
-      )
+      const { data } = await api.get('/api/orders/status')
 
       orderStatuses.value = data.result
     } catch (error) {

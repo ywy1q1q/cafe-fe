@@ -227,10 +227,10 @@
 
 <script setup lang="ts">
   import type { IBusinessSettings } from '@/types/businessSettings'
-  import axios from 'axios'
   import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
   import { useRoute, useRouter } from 'vue-router'
   import { getBusinessSettings } from '@/api/businessSettings'
+  import api from '@/plugins/axios'
 
   interface Category {
     _id: string
@@ -351,8 +351,8 @@
     loading.value = true
 
     const [productResult, statusResult, settingsResult] = await Promise.allSettled([
-      axios.get('http://localhost:4000/api/products'),
-      axios.get('http://localhost:4000/api/orders/status'),
+      api.get('/api/products'),
+      api.get('/api/orders/status'),
       getBusinessSettings(),
     ])
 

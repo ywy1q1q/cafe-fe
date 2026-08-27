@@ -73,6 +73,7 @@
 <script setup lang="ts">
   import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
   import OrderStatusCard from '@/components/OrderStatusCard.vue'
+  import api from '@/plugins/axios'
 
   interface Order {
     _id: string
@@ -104,9 +105,7 @@
     errorMessage.value = ''
 
     try {
-      const response = await fetch('http://localhost:4000/api/orders/status')
-      if (!response.ok) throw new Error('ORDER_STATUS_REQUEST_FAILED')
-      const data: { result: Order[] } = await response.json()
+      const { data } = await api.get<{ result: Order[] }>('/api/orders/status')
       orders.value = Array.isArray(data.result) ? data.result : []
     } catch (error) {
       console.error('Failed to load order status', error)

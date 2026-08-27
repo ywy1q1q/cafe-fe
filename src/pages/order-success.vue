@@ -137,9 +137,9 @@
 </template>
 
 <script setup lang="ts">
-  import axios from 'axios'
   import { onMounted, ref } from 'vue'
   import { useRoute } from 'vue-router'
+  import api from '@/plugins/axios'
 
   interface OrderItem {
     productId: string
@@ -183,7 +183,7 @@
     }
 
     try {
-      const { data } = await axios.get(`http://localhost:4000/api/orders/${lookupToken}`)
+      const { data } = await api.get(`/api/orders/${lookupToken}`)
       order.value = data.result
     } catch (error) {
       console.error('取得訂單詳情失敗', error)
