@@ -1,0 +1,1 @@
+import{An as e,Fn as t,Nn as n,ln as r}from"./resizeObserver-CcX0t_4R.js";function i(){let i=n(!1);return r(()=>{window.requestAnimationFrame(()=>{i.value=!0})}),{ssrBootStyles:t(()=>i.value?void 0:{transition:`none !important`}),isBooted:e(i)}}export{i as t};

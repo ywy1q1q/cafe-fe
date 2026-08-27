@@ -1,0 +1,1 @@
+import{t as e}from"./axios-BMsQ3Ht9.js";async function t(){return(await e.get(`/api/categories`)).data}async function n(t){return(await e.post(`/api/categories`,t)).data}async function r(t,n){return(await e.put(`/api/categories/${t}`,n)).data}async function i(t){return(await e.delete(`/api/categories/${t}`)).data}export{r as i,i as n,t as r,n as t};

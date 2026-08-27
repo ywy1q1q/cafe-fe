@@ -1,0 +1,1 @@
+import{t as e}from"./axios-BMsQ3Ht9.js";async function t(){return(await e.get(`/api/business-settings`)).data}async function n(t){return(await e.put(`/api/business-settings`,t)).data}export{n,t};
