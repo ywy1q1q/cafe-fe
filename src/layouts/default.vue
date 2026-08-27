@@ -22,7 +22,7 @@
           <img
             alt="Power Cafe 標誌"
             class="navbar-brand__logo"
-            src="/logounbg.png"
+            :src="`${baseUrl}logounbg.png`"
           >
         </span>
 
@@ -430,6 +430,7 @@
   const cartStore = useCartStore()
   const route = useRoute()
   const router = useRouter()
+  const baseUrl = import.meta.env.BASE_URL
 
   function requestStartOrdering () {
     if (route.path === '/menu') return

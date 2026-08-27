@@ -24,7 +24,7 @@
           <img
             alt="咖啡館自然光與咖啡情境"
             class="menu-hero-image"
-            src="/menu-banner.png"
+            :src="`${baseUrl}menu-banner.png`"
           >
         </div>
       </section>
@@ -395,6 +395,7 @@
   const selectedCategory = ref('all')
 
   const cartStore = useCartStore()
+  const baseUrl = import.meta.env.BASE_URL
 
   const activeOrderCount = computed(() => orderStatuses.value.filter(
     order => order.status === 'preparing',

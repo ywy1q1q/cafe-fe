@@ -266,10 +266,12 @@
   let heroCarouselTimer: ReturnType<typeof setInterval> | undefined
   let businessClockTimer: ReturnType<typeof setInterval> | undefined
 
+  const baseUrl = import.meta.env.BASE_URL
+
   const heroSlides = [
-    { image: '/home-banner-pour-over.png' },
-    { image: '/home-banner-desserts.png' },
-    { image: '/home-banner-seasonal-drink.png' },
+    { image: `${baseUrl}home-banner-pour-over.png` },
+    { image: `${baseUrl}home-banner-desserts.png` },
+    { image: `${baseUrl}home-banner-seasonal-drink.png` },
   ]
 
   const currentHeroSlide = computed(() => heroSlides[activeHeroSlide.value])
