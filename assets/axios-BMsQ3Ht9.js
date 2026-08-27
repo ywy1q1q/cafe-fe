@@ -1,1 +1,0 @@
-import{t as e}from"./axios-DfwjMtTz.js";var t=null;function n(e){t=e}var r=e.create({baseURL:`https://cafe-back-xt6w.onrender.com`,withCredentials:!0});r.interceptors.request.use(e=>(t&&(e.headers.Authorization=`Bearer ${t}`),e));export{n,r as t};

@@ -1,1 +1,0 @@
-import{t as e}from"./axios-BMsQ3Ht9.js";async function t(t){return(await e.post(`/api/orders`,t)).data}async function n(){return(await e.get(`/api/orders`)).data}async function r(t,n){return(await e.patch(`/api/orders/${t}/status`,{status:n})).data}export{n,r,t};
