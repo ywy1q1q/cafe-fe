@@ -43,6 +43,14 @@
           開始點餐
         </v-btn>
 
+        <v-btn
+          class="navbar-link navbar-link--processing"
+          to="/processing"
+          variant="text"
+        >
+          咖啡旅程
+        </v-btn>
+
         <v-btn class="navbar-link" to="/order-status" variant="text">
           訂單狀態
         </v-btn>
@@ -711,6 +719,10 @@
   text-transform: none;
 }
 
+.navbar-link--processing {
+  min-width: 108px;
+}
+
 .navbar-link.router-link-active {
   color: white;
   font-weight: 750;
@@ -781,6 +793,12 @@
     padding-inline: 7px;
   }
 
+  .navbar-link--processing {
+    font-size: 0.72rem;
+    min-width: 88px;
+    padding-inline: 5px;
+  }
+
   .navbar-login-btn {
     min-width: 44px;
     padding-inline: 10px;
@@ -797,6 +815,44 @@
 
   .navbar-cart-btn span {
     display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-navbar {
+    padding-inline: 4px;
+  }
+
+  .navbar-brand {
+    min-width: 40px;
+  }
+
+  .navbar-brand__mark,
+  .navbar-brand__logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .navbar-link {
+    font-size: 0.72rem;
+    min-width: 58px;
+    padding-inline: 3px;
+  }
+
+  .navbar-link--processing {
+    font-size: 0.65rem;
+    min-width: 76px;
+  }
+
+  .navbar-actions {
+    gap: 2px;
+    margin-right: 2px;
+  }
+
+  .navbar-login-btn,
+  .navbar-cart-btn {
+    min-width: 40px;
+    padding-inline: 8px;
   }
 }
 

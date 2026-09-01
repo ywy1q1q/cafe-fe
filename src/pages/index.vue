@@ -87,6 +87,10 @@
         </div>
       </section>
 
+      <CoffeeOrigin />
+
+      <CoffeeProcess />
+
       <section class="recommendation-section">
         <div class="section-heading">
           <div>
@@ -230,6 +234,8 @@
   import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
   import { useRoute, useRouter } from 'vue-router'
   import { getBusinessSettings } from '@/api/businessSettings'
+  import CoffeeOrigin from '@/components/home/CoffeeOrigin.vue'
+  import CoffeeProcess from '@/components/home/CoffeeProcess.vue'
   import api from '@/plugins/axios'
 
   interface Category {
@@ -283,7 +289,6 @@
   const readyCount = computed(() => orderStatuses.value.filter(
     order => order.status === 'ready',
   ).length)
-
 
   const todayBusinessHours = computed(() => {
     return businessSettings.value?.weeklyHours.find(
@@ -469,6 +474,12 @@
   --home-text: #3f3027;
   --home-muted: #8a7464;
   --home-border: #e3d7ca;
+  --story-bg: #faecd3;
+  --story-ink: #3f3027;
+  --story-primary: #6f4e37;
+  --story-accent: #9b643c;
+  --story-muted: #806b5c;
+  --story-line: rgb(111 78 55 / 16%);
   background:
     radial-gradient(circle at 92% 8%, rgb(169 124 83 / 13%), transparent 28%),
     var(--home-bg);

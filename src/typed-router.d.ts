@@ -115,6 +115,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/processing': RouteRecordInfo<
+      '/processing',
+      '/processing',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/register': RouteRecordInfo<
       '/register',
       '/register',
@@ -226,6 +233,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/order-success.vue': {
       routes:
         | '/order-success'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/processing.vue': {
+      routes:
+        | '/processing'
       views:
         | never
       pathParamNames:
