@@ -1,0 +1,1 @@
+import{dt as e,ft as t,w as n}from"./runtime-dom.esm-bundler-CL_047EA.js";import{D as r,x as i}from"./resizeObserver-Cb9m_zSL.js";function a(a,o=`div`,s){return i()({name:s??t(e(a.replace(/__/g,`-`))),props:{tag:{type:String,default:o},...r()},setup(e,{slots:t}){return()=>n(e.tag,{class:[a,e.class],style:e.style},t.default?.())}})}export{a as t};
