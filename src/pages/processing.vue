@@ -1,12 +1,10 @@
 <script setup lang="ts">
   import CoffeeJourney from '@/components/processing/CoffeeJourney.vue'
-  import ProcessingFooter from '@/components/processing/ProcessingFooter.vue'
 </script>
 
 <template>
   <main class="processing-page">
     <CoffeeJourney />
-    <ProcessingFooter />
   </main>
 </template>
 

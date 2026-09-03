@@ -10,18 +10,18 @@
     class="origin-harvest"
   >
     <div class="origin-harvest__copy">
-      <p class="origin-harvest__eyebrow">01&nbsp;&nbsp;ORIGIN &amp; HARVEST</p>
+      <p class="origin-harvest__eyebrow">ORIGIN &amp; HARVEST</p>
 
       <h2 id="origin-harvest-title" class="origin-harvest__title">
-        從產地，<br>到成熟的果實
+        從產地，到成熟的果實
       </h2>
 
       <p class="origin-harvest__description">
-        好的咖啡，從生長的土地開始。海拔、氣候、日照與成熟度，共同形塑一杯咖啡最初的風味方向。
+        一杯咖啡的風味，早在沖煮之前就已形成。海拔、氣候、日照與果實成熟度，共同寫下最初的香氣與甜感。
       </p>
 
       <p class="origin-harvest__note">
-        風味的旅程，在採收之前就已經開始。
+        從土地到紅果，每一步都為杯中的風味留下線索。
       </p>
     </div>
 
@@ -39,7 +39,7 @@
         <h3 class="journey-image-panel__title">產地</h3>
 
         <p class="journey-image-panel__description">
-          高海拔、氣候與日照，塑造咖啡最初的風味。
+          海拔、氣候與日照，寫下咖啡最初的風味輪廓。
         </p>
       </div>
     </article>
@@ -58,7 +58,7 @@
         <h3 class="journey-image-panel__title">採收</h3>
 
         <p class="journey-image-panel__description">
-          只採收成熟紅果，讓甜度與風味停留在最佳狀態。
+          只採摘成熟紅果，完整保留甜感與乾淨果香。
         </p>
       </div>
     </article>
@@ -92,11 +92,12 @@
 .origin-harvest__title {
   color: var(--processing-ink, #3b2419);
   font-family: "Noto Sans TC", sans-serif;
-  font-size: clamp(2.5rem, 3.8vw, 4.125rem);
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   font-weight: 400;
   letter-spacing: 0.015em;
   line-height: 1.18;
   margin: 0;
+  white-space: nowrap;
 }
 
 .origin-harvest__description {
@@ -185,11 +186,11 @@
   }
 
   .origin-harvest__copy {
-    padding: 48px 32px;
+    padding: 48px 24px;
   }
 
   .origin-harvest__title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
   }
 }
 
@@ -205,6 +206,7 @@
 
   .origin-harvest__title {
     font-size: clamp(2.25rem, 10vw, 3.25rem);
+    white-space: normal;
   }
 
   .journey-image-panel {

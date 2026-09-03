@@ -423,12 +423,15 @@
     >
       <router-view />
     </v-main>
+
+    <AppFooter v-if="showAppFooter" />
   </v-app>
 </template>
 
 <script setup lang="ts">
   import { computed, onBeforeUnmount, ref, watch } from 'vue'
   import { useRoute, useRouter } from 'vue-router'
+  import AppFooter from '@/layouts/AppFooter.vue'
   import {
     type CartItem,
     type CartModifierGroup,
@@ -439,6 +442,8 @@
   const route = useRoute()
   const router = useRouter()
   const baseUrl = import.meta.env.BASE_URL
+  const footerRoutes = new Set(['/', '/menu', '/processing', '/order-status'])
+  const showAppFooter = computed(() => footerRoutes.has(route.path))
 
   function requestStartOrdering () {
     if (route.path === '/menu') return
