@@ -1,1 +1,0 @@
-import{r as e}from"./axios-BPwEhkrb.js";var{Axios:t,AxiosError:n,CanceledError:r,isCancel:i,CancelToken:a,VERSION:o,all:s,Cancel:c,isAxiosError:l,spread:u,toFormData:d,AxiosHeaders:f,HttpStatusCode:p,formToJSON:m,getAdapter:h,mergeConfig:g,create:_}=e;export{l as t};

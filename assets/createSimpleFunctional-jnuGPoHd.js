@@ -1,0 +1,1 @@
+import{S as e,ft as t,pt as n}from"./runtime-core.esm-bundler-DnjR7E9e.js";import{D as r,x as i}from"./resizeObserver-DXMO7otb.js";function a(a,o=`div`,s){return i()({name:s??n(t(a.replace(/__/g,`-`))),props:{tag:{type:String,default:o},...r()},setup(t,{slots:n}){return()=>e(t.tag,{class:[a,t.class],style:t.style},n.default?.())}})}export{a as t};

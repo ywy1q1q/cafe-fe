@@ -1,1 +1,0 @@
-import{t as e}from"./axios-BPwEhkrb.js";async function t(t){return(await e.post(`/auth/register`,t)).data}async function n(t){return(await e.post(`/auth/login`,t)).data}async function r(){return(await e.delete(`/auth/logout`)).data}async function i(){return(await e.post(`/auth/refresh`)).data}export{t as i,r as n,i as r,n as t};
