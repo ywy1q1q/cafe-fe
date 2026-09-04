@@ -7,12 +7,14 @@
           @mouseenter="pauseHeroCarousel"
           @mouseleave="startHeroCarousel"
         >
-          <img
-            :key="currentHeroSlide.image"
-            alt="溫暖的咖啡館吧台"
-            class="hero-image"
-            :src="currentHeroSlide.image"
-          >
+          <Transition name="hero-fade">
+            <img
+              :key="currentHeroSlide.image"
+              alt="溫暖的咖啡館吧台"
+              class="hero-image"
+              :src="currentHeroSlide.image"
+            >
+          </Transition>
 
           <div class="hero-overlay" />
 
@@ -448,11 +450,19 @@
 
   function startHeroCarousel () {
     pauseHeroCarousel()
-    heroCarouselTimer = setInterval(showNextHeroSlide, 6500)
+    heroCarouselTimer = setInterval(showNextHeroSlide, 9000)
+  }
+
+  function preloadHeroImages () {
+    for (const slide of heroSlides) {
+      const image = new Image()
+      image.src = slide.image
+    }
   }
 
   onMounted(() => {
     void loadHomeData()
+    preloadHeroImages()
     startHeroCarousel()
     businessClockTimer = setInterval(() => {
       currentDateTime.value = new Date()
@@ -515,13 +525,30 @@
 }
 
 .hero-image {
-  animation: hero-image-in 700ms ease;
+  animation: hero-image-zoom 11s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   height: 100%;
   inset: 0;
   object-fit: cover;
   object-position: center 53%;
   position: absolute;
+  transform-origin: center center;
+  will-change: opacity, transform;
   width: 100%;
+}
+
+.hero-fade-enter-active,
+.hero-fade-leave-active {
+  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-fade-enter-from,
+.hero-fade-leave-to {
+  opacity: 0;
+}
+
+.hero-fade-enter-to,
+.hero-fade-leave-from {
+  opacity: 1;
 }
 
 .hero-carousel-controls {
@@ -1122,9 +1149,9 @@
   50% { opacity: 1; }
 }
 
-@keyframes hero-image-in {
-  from { opacity: 0.45; transform: scale(1.015); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes hero-image-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.075); }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1273,6 +1300,11 @@
   .loading-line,
   .hero-image {
     animation: none;
+  }
+
+  .hero-fade-enter-active,
+  .hero-fade-leave-active {
+    transition: none;
   }
 }
 
